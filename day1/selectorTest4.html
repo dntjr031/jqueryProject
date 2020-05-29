@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('input[type=text]').val("안녕");
+		$('a[title]').css('text-decoration','none');
+		//=> a태그 중 title 속성을 가지고 있는 요소 선택
+	});
+</script>
+</head>
+<body>
+	<input type="text">
+	<input type="password">
+	<input type="radio">
+	<input type="checkbox">
+	
+	<hr>
+	<a href="jqtest1.html" title="툴팁!">jqtest1으로 이동</a>
+	<br>
+	<a href="jstest2.html">jstest2으로 이동</a>
+	</body>
+</html>
