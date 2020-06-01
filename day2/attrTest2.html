@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#showImage {
+	display: none;
+	border: 1px solid gray;
+	width: 300px;
+	height: 300px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#product > img").hover(function() {
+			var src = $(this).attr("src"); // ../images/herb1.JPG
+			var idx = src.lastIndexOf('/');
+			var imgName = src.substr(idx+1); // => herb1.JPG
+			
+			console.log(src);
+			console.log(imgName);
+			
+			$("#showImage").show();
+			$("#showImage img").attr("src","../images/big/" + imgName);
+		}, function() {
+			$("#showImage").hide();
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="product">
+		<img src="../images/herb1.JPG" /> <img src="../images/herb2.JPG" />
+		<div id="showImage">
+			<img />
+		</div>
+	</div>
+</body>
+</html>

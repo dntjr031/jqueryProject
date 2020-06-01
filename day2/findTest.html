@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin: 7px;
+	border: 1px solid blue;
+	padding: 7px
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("div").eq(1).siblings().css("border","5px solid blue")
+			.end().next().css("background","pink")
+			.end().nextAll().css("color","green");
+		
+		$("div").find("p").css("border","1px solid red") // div의 자식에서 p태그를 찾는다
+			.add("span").css("background","yellow");
+		
+		//$("div p, span").css("background", "orange");
+		
+		$("p").parent().css("font-weight","bold"); // p태그의 부모를 선택
+	})
+</script>
+</head>
+<body>
+	<div>
+		A
+		<p>p a</p>
+	</div>
+	<div>
+		B
+		<p>p b</p>
+	</div>
+	<div>
+		C
+		<p>p c</p>
+	</div>
+	<div>
+		D <br /> <span>span d</span>
+	</div>
+	<div>
+		E <br /> <span>span e</span>
+	</div>
+</body>
+</html>

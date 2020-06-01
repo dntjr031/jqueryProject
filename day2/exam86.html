@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 108px;
+}
+
+fieldset {
+	width: 360px;
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn1").click(function() {
+			var what = $("input[name=command]:checked").val();
+			if(what == "appendTo"){
+				$("#flower").appendTo("p:eq(2)");
+				$("#car").appendTo("p:eq(0)");
+			}else if(what == "prepend"){
+				$("p:eq(2)").prepend("<img id='flower' src='../images/flower.png'>");
+				$("p:eq(0)").prepend("<img id='flower' src='../images/car.png'>");
+			}
+		});
+		
+		$("#btn2").click(function() {
+			var $img = $("#targets img").eq(0).clone();
+			$("#copy1 p").append($img);
+		});
+		
+		$("#btn3").click(function() {
+			$("#copy1 p").empty();
+		});
+		$("#btn4").click(function() {
+			$("#copy1 p img:last").remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<h3>Move and Copy</h3>
+	<form action="a.jsp" onsubmit="return false;">
+		<fieldset id="source">
+			<legend>Source elements</legend>
+			<img id="flower" src="../images/flower.png" /> <img id="car"
+				src="../images/car.png" />
+		</fieldset>
+		<br />
+		<fieldset id="targets">
+			<legend>Target elements</legend>
+			<p>
+				<img src="../images/dragonfly.png" />
+			</p>
+			<p>
+				<img src="../images/dragonfly.png" />
+			</p>
+			<p>
+				<img src="../images/dragonfly.png" />
+			</p>
+		</fieldset>
+		<fieldset id="copy1">
+			<legend>Copy elements</legend>
+			<p></p>
+		</fieldset>
+		<div>
+			<div>
+				<input type="radio" name="command" value="appendTo"
+					checked="checked" />appendTo <input type="radio" name="command"
+					value="prepend" /> prepend
+			</div>
+			<button type="button" id="btn1">Execute</button>
+			&nbsp;
+			<button type="button" id="btn2">Copy</button>
+			&nbsp;
+			<button type="button" id="btn3">Empty</button>
+			&nbsp;
+			<button type="button" id="btn4">Remove</button>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/////////1번//////////
+		$("p").attr("id", function(idx) {
+			return "p_" + idx;
+		});
+
+		$("#bt1").click(function() {
+
+			var result = $("#p_1").text();
+
+			alert(result);
+		});
+		
+		///////2번////////
+		
+		$("input[type=text]").css({
+			"border": "1px solid gray",
+			"color": "gray"
+		});
+		
+		$("#bt2").click(function() {
+			var copy = $("input[name=id]").val();
+			$("input[name=idCopy]").val(copy);
+		});
+		
+		/////////3번/////////////
+		
+		
+		$("#bt3").click(function() {
+			var pwd = $("input[name=pwd]").val();
+			var pwdOk = $("input[name=pwdOk]").val();
+			
+			var result = "";
+			if(pwd == pwdOk){
+				result = "비밀번호가 맞습니다.";
+			}else{
+				result = "비밀번호가 틀립니다.";
+			}
+			
+			$(".result").css({
+				"color":"red",
+				"font-weight":"bold"
+			}).html(result);
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>1번</h1>
+	<p>jsp</p>
+	<p>spring</p>
+	<p>jQuery</p>
+	<input type="button" value="동적으로 생성된 id로 접근" id="bt1">
+	<hr>
+	<h1>2번</h1>
+	아이디 : <input type="text" name="id">
+	<input type="button" value="아이디 복사" id="bt2">
+	<hr>
+	아이디 : <input type="text" name="idCopy" >
+	<hr>
+	<h1>3번</h1>
+	비밀번호 : <input type="password" name="pwd"><br>
+	비밀번호 확인 : <input type="password" name="pwdOk" ><br>
+	<input type="button" value="확인" id="bt3">
+	<p class="result"></p>
+</body>
+</html>
