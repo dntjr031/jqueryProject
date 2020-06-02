@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* $("p").hover(function() {
+			$(this).css("background", "pink");
+		}, function() {
+			$(this).css("background", "");
+		}); */
+		
+		$("p").mouseenter(function() {
+			$(this).css("background", "skyblue");
+		}).mouseleave(function() {
+			$(this).css("background", "");
+		});
+	});
+</script>
+</head>
+<body>
+	<p>Hello JQuery</p>
+	<p>안녕</p>
+</body>
+</html>
