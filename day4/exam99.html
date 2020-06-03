@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#main {
+	background: skyblue;
+}
+
+#front span {
+	font-weight: bold;
+}
+</style>
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#main").hide();
+
+		$("#front span").click(function() {
+			$("#main").slideDown(1000);
+			$(this).fadeOut(1000);
+		});
+
+		$("button").click(function() {
+			$("#main").slideUp(1000);
+			$("#front span").fadeIn(1000);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="front">
+		안녕하세요~~~<span>more...</span>
+	</div>
+	<div id="main">
+		여기는 본문 입니다... <br> <br> <br>
+		<button type="button">close</button>
+	</div>
+</body>
+</html>

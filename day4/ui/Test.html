@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../css/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.js"></script>
+<style type="text/css">
+header {
+	height: 500px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: #f5b335;
+	transition: top 0.2s ease-in-out;
+}
+
+body {
+	padding-top: 40px;
+}
+
+.nav-up {
+	top: -40px;
+}
+</style>
+<script type="text/javascript">
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('header').outerHeight();
+	$(window).scroll(function(event) {
+		didScroll = true;
+	});
+	setInterval(function() {
+		if (didScroll) {
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250);
+	function hasScrolled() {
+		var st = $(this).scrollTop();
+		// Make sure they scroll more than delta 
+		if (Math.abs(lastScrollTop - st) <= delta)
+			return;
+		// If they scrolled down and are past the navbar, add class .nav-up. 
+		// This is necessary so you never see what is "behind" the navbar. 
+		if (st > lastScrollTop && st > navbarHeight) {
+			// Scroll Down 
+			$('header').removeClass('nav-down').addClass('nav-up');
+		} else {
+			// Scroll Up 
+			if (st + $(window).height() < $(document).height()) {
+				$('header').removeClass('nav-up').addClass('nav-down');
+			}
+		}
+		lastScrollTop = st;
+	}
+</script>
+</head>
+<body>
+	<header> </header>
+	<section>
+		<div>
+			<p>보건 코로나바이러스감염증-19 범유행 대한민국의 0시 기준 확진자 수가 11,142명으로 집계되었다. 전날 0시
+				대비 20명이 늘었다. 러시아의 확진자 수가 32만 명을 넘어섰다. 미국의 코로나바이러스감염증-19 범유행 미국의 확진자
+				수가 158,9000여 명, 사망자 수는 8,9700여 명으로 집계되었다. 미시간주 그레천 휘트머 주지사가 재택
+				명령(Stay-at-home order)을 6월 12일까지, 비상사태를 6월 19일까지 연장하였다. 브라질 보건부는 확진자
+				수가 330,890명으로 전날 대비 20,803명 늘었다고 밝혔다. 브라질 확진자 수가 2만명 이상 증가하기는 처음이다.
+				브라질은 2월 26일 첫 확진 사례 보고 이후, 5월 3일 10만, 14일 20만, 21일 30만명을 넘어섰다. 사고
+				파키스탄 국제항공 8303편 추락 사고: 파키스탄에서 파키스탄 국제항공 소속 여객기인 8303편이 카라치 모델
+				콜로니(Model Colony)에 추락하는 사고가 발생하였다. 라호르의 알라마 이크발 국제공항을 출발, 카라치의 진나
+				국제공항으로 향하던 8303편에는 약100여 명 이상이 탑승한 것으로 알려졌다. 도심 지역에 추락하면서 지상의 인명 피해도
+				발생한 것으로 추정되며, 최소 56명의 시신이 수습되었다. 정치와 선거 뉴질랜드 제1야당인 뉴질랜드 국민당에서 신임
+				지도부를 구성하기 위한 비상 의원총회가 소집되었다. 선거 결과 신임 대표에 토드 멀러(Todd Muller), 부대표에
+				니키 케이(Nikki Kaye)가 선출되었다. 2018년초에 당권을 잡은 사이먼 브리지스(Simon Bridges)대표는
+				토드 밀러에 밀려났다. 한편, 뉴질랜드는 오는 9월 19일 총선을 실시해 120명의 의원을 선출할 예정이다. 미래한국당이
+				2020년 5월 22일 열린 미래한국당 당선자 회의에서 2020년 5월 29일에 미래통합당과 합당할 것이라고 결정했다.</p>
+			<p>법과 범죄 미국 매사추세츠주 관계 당국은 2019년 르노·닛산·미쓰비시의 회장의 카를로스 곤 회장이 일본에서
+				레바논으로 탈출할 수 있도록 도운 아버지와 아들(각각 59세, 27세)을 체포하였다고 밝혔다. 볼리비아의 마르셀로
+				나바하스(Marcelo Navajas) 보건부 장관이 인공호흡기 구매와 관련한 비리 의혹으로 체포되었다. 볼리비아 보건
+				당국은 최근 감염증 유행과 관련하여 미주개발은행의 지원을 받아 스페인 업체가 제조한 인공호흡기 179대(총액 약
+				500만달러)를 구입한 바 있다. 보건 코로나바이러스감염증-19 범유행 대한민국의 0시 기준 확진자 수가 11,110명으로
+				집계되었다. 전날 0시 대비 32명이 늘었다. 스포츠 미국의 프로레슬링 단체인 WWE의 선수 섀드 개스퍼드이 캘리포니아
+				해변에서 숨진 채 발견되었다. 개스퍼드는 지난 17일 해변에서 실종된 바 있다. 재해 2020년 북인도양 사이클론: 인도
+				서벵골주와 방글라데시 일대에 사이클론 암판(Amphan)이 상륙하였다. 최소 85명이 숨졌으며, 약 4000만여 명의
+				이재민이 발생하였다. 미국 미시간주에서 폭우와 홍수로 댐 두 곳(이든빌 댐, 샌포드 댐)이 범람하고, 일부 유실되었다.
+				이와 관련하여 10,000여 명의 주민에 대한 대피 명령이 내려졌다. 17일부터 폭우가 이어진 미시간주는 19일 비상사태가
+				선포되었다.</p>
+		</div>
+	</section>
+</body>
+</html>
